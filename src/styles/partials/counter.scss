@@ -1,0 +1,59 @@
+.counter-page{
+    width: 100%;
+    text-align: center;
+
+    .container h1{
+        width:100%;
+        font-weight:300;
+        text-align:center;
+        margin-top:20px;
+    }
+    .counter {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px 0;
+    
+      button{
+        background-color:#007bff;
+        color:#fff;
+        width:70px;
+        height:70px;
+        border-radius:50px;
+        border:none;
+        cursor:pointer;
+        font-size:23px;
+        transition: opacity 1s ease-out;
+        }
+        button:hover{
+            opacity:.8;
+            transition:opacity .2s ease-in
+        }
+        button:active{
+            border:3px solid #fff;
+        }
+        .counter_value, .counter_value2 {
+            width: 179px;
+            text-align: center;
+        }
+    }
+    .reset{
+        border-radius: 15px;
+        width: 119px;
+        height: 42px;
+        background-color: #007bff;
+        color: white;
+        font-size: 16px;
+        border: snow;
+        cursor: pointer;
+        transition: opacity 1s ease-out;
+    }
+    .reset:hover{
+        opacity:.8;
+        transition:opacity .2s ease-in
+    }
+    .reset:active{
+        border:3px solid #fff;
+    }
+}

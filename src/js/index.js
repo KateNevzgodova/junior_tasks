@@ -1,2 +1,3 @@
 import "./../styles/index.scss";
-import "./partials/some_script.js";
+
+import "./partials/counter";
