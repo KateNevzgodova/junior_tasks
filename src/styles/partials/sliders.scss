@@ -51,10 +51,50 @@
 }
     .slytherin-container {
         background-color: #43a78f57;
+        .slider-container{
+            flex-direction: column;
+            align-items: center;
+        }
+        .slider{
+            border: 4px solid $color-slytherin;
+        }
+        button{
+            height: 23px;
+            border-radius: 40px;
+            margin: 10px 10px;
+            width: 23px;
+            background-color: $color-slytherin;
+            border-color: $color-slytherin;
+            cursor: pointer;
+            &.active{
+                background-color: white;
+            }
+        }
+        
     }
     .ravenclaw-container {
         width: 100%;
         background-color: #3c92c24d;
+           .arrow button{
+               background-color:$color-ravenclaw;
+            }
+            .arrow button:active{
+               border:3px solid #f7dede;
+               font-size:25px;
+            }
+            .slider{
+               border:4px solid $color-ravenclaw;
+               position: relative;
+               overflow: hidden;
+               
+               div{
+                position: absolute;
+                top: 0;
+                background-position: center;
+                background-size: cover;
+                transition: left 250ms;
+               }
+             }
     }
     .hufflepuff-container {
         width: 100%;

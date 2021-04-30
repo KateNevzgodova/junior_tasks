@@ -64,6 +64,8 @@ if (counterPage) {
             localStorage.clear();
             document.querySelector(".counter_value2").innerHTML =0;
             document.querySelector(".counter_value").innerHTML =0;
+            clicks =0;
+            clicks2=0;
         }
         document.querySelector(".reset").onclick=reset;
         
