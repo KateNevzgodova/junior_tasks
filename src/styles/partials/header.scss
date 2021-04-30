@@ -10,6 +10,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media only screen and (max-width: $bp-ms){
+            padding: 0px 10px;
+        }
        }
        
        .header-title {
@@ -43,7 +46,7 @@
             padding-top:7px;
             height:100%;
             @media only screen and (max-width: 640px){
-                height: 57px;
+                height: 100%;
                 overflow: hidden;
                 transition:height .1s ease-in;
                 display:block !important;
@@ -53,12 +56,10 @@
         .burger:hover+nav{
             
             @media only screen and (max-width: 640px){
-                opacity:.6;
-                height: 69px;
-                overflow: hidden;
-                padding:14px 0;
-                transition:height .1s ease-in;
-                display:block !important;
+               height: 195px;
+               overflow: hidden;
+               padding: 14px 0px;
+               display: block !important;
             }
         }
         .burger div{
@@ -109,6 +110,6 @@
     }
     .content-container{
       background-color: #f2eded;
-      height: calc(100% - 65px);
+      height: calc(100% - 60px);
     }
 }
