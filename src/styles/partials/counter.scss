@@ -38,7 +38,7 @@
             text-align: center;
         }
     }
-    .resert{
+    .reset{
         border-radius: 15px;
         width: 119px;
         height: 42px;
@@ -49,11 +49,11 @@
         cursor: pointer;
         transition: opacity 1s ease-out;
     }
-    .resert:hover{
+    .reset:hover{
         opacity:.8;
         transition:opacity .2s ease-in
     }
-    .resert:active{
+    .reset:active{
         border:3px solid #fff;
     }
 }
