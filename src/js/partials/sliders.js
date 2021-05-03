@@ -25,8 +25,7 @@ griffindorContainer.querySelector(".arrow.next").addEventListener("click", funct
 griffindorSlider.style.backgroundImage = "url(".concat(griffindor[griffindorIndex], ")");
 });
 
-const slytherin = ["src/img/golden.jpg", "src/img/gryffindor.jpg", "src/img/hermiona.jpg", "src/img/hp.jpg",
-"src/img/marauders_map.jpg","src/img/ron.jpg","src/img/train.jpg"];
+const slytherin = ["src/img/slytherin_1.jpg","src/img/drako_trio.jpg","src/img/snape.jpg"];
 
 const slytherinContainer = document.querySelector(".slytherin-container");
 const slytherinSlider = slytherinContainer.querySelector(".slider");
@@ -50,7 +49,7 @@ slytherin.forEach((picture, index) => {
     slytherinBtnsContainer.appendChild(btn);
 });
 
-const ravenclaw = ["src/img/Hufflepuff-header.jpg","src/img/scarf.jpg","src/img/sedric.jpg","src/img/huff.jpg","src/img/salamander.png","src/img/huf_aesthetic.jpg"];
+const ravenclaw = ["src/img/ravenclaw.jpg","src/img/raven.jpg","src/img/aven_aesthetic.jpg","src/img/polumna_lavgud.jpeg"];
 const ravenclawContainer = document.querySelector(".ravenclaw-container");
 const ravenclawSlider = ravenclawContainer.querySelector(".slider");
 let ravenclawIndex =0;
