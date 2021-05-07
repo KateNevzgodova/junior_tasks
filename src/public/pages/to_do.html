@@ -7,10 +7,31 @@
     <title>To Do App</title>
 </head>
 <body class="to-do-page">
-    
-    <div class="container">
+    <header>
+      <div class="container header-to-do">
         <h1>To do app</h1>
+      </div>
+    </header>
+    <nav>
+        <div class="container nav-container">
+            <input type="checkbox" id="done"><label for="done">Filter Done</label>
+            <input type="checkbox" id="undone"><label for="undone">Filter Undone</label>
+            <button class="clear-done">Clear Done</button>
+            <button class="clear-all">Clear All</button>
+        </div>
+    </nav>
+    <div class="input-task container">
+        <input type="text" id="input" placeholder="I have to...">
+        <span onclick="newElement()" class="addBtn">Добавить</span>
     </div>
+    <ul id="ul">
+        <li class="li">rememeber</li>
+        <li class="checked li">положить деньги на карту</li>
+        <li class="li">Доработка</li>
+        <li class="li">Купить чипсы</li>
+        <li class="li"></li>
+        <li class="li">маме подарок</li>
+    </ul>
 
 </body>
 </html>
