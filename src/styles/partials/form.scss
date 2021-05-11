@@ -1,0 +1,123 @@
+.form-page{
+    width: 100%;
+    height: 100%;
+.container-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h1{
+        margin: 15px;
+        font-weight: 400;
+    }
+    #form_registration{
+        padding: 10px;
+        .form-row {
+            width: 100%;
+            padding: 10px;
+            label{
+                width: 100px;
+                display: inline-block;
+                text-align: end;
+                margin-right: 10px;
+                font-size: 18px;
+                &.desk{
+                    width: 100px;
+                    display: inline-block;
+                    text-align: end;
+                    margin-right: 10px;
+                    font-size: 18px;
+                }
+                &.check-lang{
+                    text-align: left;
+                }
+                &.text-area{
+                    float: left;
+                    padding: 5px;
+                }
+            }
+            select {
+                padding: 5px;
+            }
+            input{
+                padding: 4px;
+                outline-color: #007bff;
+                &[type=radio]{
+                    margin-right: 3px;
+                    &+label {
+                        text-align: left;
+                        margin: 0px -50px 0px 0px;
+                    }
+                }
+                &[type=submit]{
+                    margin-left: 113px;
+                    padding: 10px 15px;
+                    font-size: 18px;
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                }
+            }
+            textarea {
+                resize: none;
+                padding: 4px;
+                outline-color: #007bff;
+            }
+            .alert {
+                padding: 10px;
+                background-color: red;
+                opacity: .6;
+                width: 100%;
+                margin-top: 5px;
+                animation: fadeIn 2s;
+            }
+        }
+    }
+ }
+ .modal {
+    .content {
+       background-color: #fff;
+       display: flex;
+       align-items: center;
+       flex-direction: column;
+       padding: 20px;
+       .modal-header {
+         align-self: flex-end;
+         .close {
+            background-image: url(https://icons-for-free.com/iconfiles/png/512/CLOSE-131994911256789607.png);
+            width: 30px;
+            height: 30px;
+            background-position: center;
+            background-size: cover;
+            background-color: #fff;
+            border: none;
+            cursor: pointer;
+         }
+        }
+        .modal-title {
+            margin: 5px 50px;
+            span {
+                font-size: 28px;
+            }
+        }
+        .modal-texarea {
+            margin: 20px 0;
+            textarea {
+                width: 400px;
+                height: 110px;
+                resize: none;
+                padding: 4px;
+                outline-color: #007bff;
+            }
+        }
+        .ok-btn {
+            border: none;
+            cursor: pointer;
+            padding: 5px 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 20px;
+        }
+    }
+ }
+}
