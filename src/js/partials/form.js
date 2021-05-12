@@ -44,19 +44,19 @@ document.getElementById("form_registration").addEventListener("submit", function
     });
  if (username.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g)) {
     isValid = false;
-    username.setCustomValidity("Must contain letters <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
+    showMistakes(username,"Must contain letters <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
  }
- if (password.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g) || !password.value.match(/[a-z]/g) || !password.value.match(/[A-Z]/g) || !password.value.match(/[0-9]/g)) {
+ if (password.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g) || !password.value.match(/[a-z]/g) || !password.value.match(/[A-Z]/g) || !password.value.match(/\d/g)) {
     isValid = false;
-    password.setCustomValidity("Must contain min 1 uppercase letter and 1 lowercase letter <br> Must contain min 1 number <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
+    showMistakes(password,"Must contain min 1 uppercase letter and 1 lowercase letter <br> Must contain min 1 number <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
  } 
  if (name.value.replace(" ", "").match(/(\\W+)|(\\d)/g)) {
     isValid = false;
-    name.setCustomValidity("Alphabates only");
+    showMistakes(name,"Alphabates only");
  }
  if (country.selectedIndex === 0) {
      isValid = false;
-     country.setCustomValidity("Required"); }
+     showMistakes(country,"Required"); }
  if (isValid) {
       let result = {
            username: username.value,
@@ -73,4 +73,13 @@ document.getElementById("form_registration").addEventListener("submit", function
         console.log(result);
    }
    })
+
+   function showMistakes(mistake, innerHTML) {
+      const show = document.createElement("div");
+      show.className = "show";
+      const showText = document.createElement("span");
+      showText.innerHTML = innerHTML;
+      show.appendChild(showText);
+      mistake.after(show);
+      };
 }
