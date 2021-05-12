@@ -26,6 +26,7 @@ event.target.value = event.target.value.replace(/\D/g, "");
 });
 
 document.getElementById("form_registration").addEventListener("submit", function (event) {
+   //предотвращаем отправку формы путём отмены события
     event.preventDefault();
     let isValid = true;
     let fields = event.target.elements;
@@ -43,19 +44,19 @@ document.getElementById("form_registration").addEventListener("submit", function
     });
  if (username.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g)) {
     isValid = false;
-    alert("Must contain letters <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
+    username.setCustomValidity("Must contain letters <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
  }
- if (password.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g) || !password.value.match(/[\\d]/g) || !password.value.match(/[a-z]/g) || !password.value.match(/[A-Z]/g)) {
+ if (password.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g) || !password.value.match(/[a-z]/g) || !password.value.match(/[A-Z]/g) || !password.value.match(/\d/g)) {
     isValid = false;
-    alert("Must contain min 1 uppercase letter and 1 lowercase letter <br> Must contain min 1 number <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
+    password.setCustomValidity("Must contain min 1 uppercase letter and 1 lowercase letter <br> Must contain min 1 number <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
  } 
- if (name.value.replace(" ", "").match(/(\\W+)|(\\d)/g)) {
+ if (name.value.replace(" ", "").match(/(\\W+)&(\\d)/g)) {
     isValid = false;
-    alert("Alphabates only");
+    name.setCustomValidity("Alphabates only");
  }
  if (country.selectedIndex === 0) {
      isValid = false;
-     alert("Required"); }
+     country.setCustomValidity("Required"); }
  if (isValid) {
       let result = {
            username: username.value,
@@ -67,7 +68,9 @@ document.getElementById("form_registration").addEventListener("submit", function
            sex: sex.value,
         //    language: language,
            about: about.value
+           
         };
-console.log(result);}
-})
+        console.log(result);
+   }
+   })
 }
