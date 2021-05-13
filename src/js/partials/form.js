@@ -16,7 +16,8 @@ countryElement.appendChild(option);
 countryList.forEach(function (country) {
 const option = document.createElement("option");
 option.innerText = country;
-countryElement.appendChild(option);});
+countryElement.appendChild(option);
+});
 
 // чтобы в индексе нельзя было бы вводить что-то кроме цифр:
 const zip = document.getElementById("zip");
@@ -38,25 +39,36 @@ document.getElementById("form_registration").addEventListener("submit", function
     let zip = fields["zip"];
     let sex = fields["sex"];
     let about = fields["about"];
-    // let langList = fields["language"];
-    event.target.querySelectorAll(".alert").forEach(function (alert) {
-          alert.remove();
+    let langList = fields["language"];
+    event.target.querySelectorAll(".show").forEach(function (show) {
+          show.remove();
     });
  if (username.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g)) {
     isValid = false;
     showMistakes(username,"Must contain letters <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
  }
- if (password.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g) || !password.value.match(/[a-z]/g) || !password.value.match(/[A-Z]/g) || !password.value.match(/\d/g)) {
+ if (password.value.match(/[!#^&*()<>?=/\-+@{}_$%]/g) || !password.value.match(/[a-z]/g) || !password.value.match(/[A-Z]/g) || !password.value.match(/[0-9]/g)) {
     isValid = false;
     showMistakes(password,"Must contain min 1 uppercase letter and 1 lowercase letter <br> Must contain min 1 number <br> Must not contain special characters  (!#^&*()<>?=-+@{}_$%).");
- } 
- if (name.value.replace(" ", "").match(/(\\W+)|(\\d)/g)) {
+ }
+ if (name.value.replace(" ", "").match(/(\\W+)|([0-9])/g)) {
     isValid = false;
     showMistakes(name,"Alphabates only");
  }
  if (country.selectedIndex === 0) {
      isValid = false;
-     showMistakes(country,"Required"); }
+     showMistakes(country,"Required"); 
+   }
+   var language = [];
+   langList.forEach(function (lng) {
+         if (lng.checked) {
+            language.push(lng.value);
+         }
+      });
+      if (language.length === 0) {
+         isValid = false;
+         showMistakes(langList[0].parentElement.lastElementChild, "Required");
+      }
  if (isValid) {
       let result = {
            username: username.value,
@@ -66,11 +78,13 @@ document.getElementById("form_registration").addEventListener("submit", function
            country: country.value,
            zip: zip.value,
            sex: sex.value,
-        //    language: language,
+           language: language,
            about: about.value
-           
-        };
-        console.log(result);
+         };
+      //   console.log(result);
+        modal.querySelector("#result").value = JSON.stringify(result);
+        modal.style.display = "flex";
+      //   console.log(result);
    }
    })
 
