@@ -17,4 +17,36 @@
 
 html {
     height: 100%;
+    .main-page{
+        .container{
+            h1{
+                font-weight: 500;
+                text-align: center;
+                background: linear-gradient(to right, #CD2F2F 13%, #43A78F 37%, #EEC65E 62%, #3C92C2 87%, #CD2F2F 100%);
+                background-size: 200% auto;
+                color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: shine 20s linear infinite;
+                padding: 5px;
+                width: 100%;
+            }
+            nav{
+                padding: 5px;
+                width: 100%;
+                text-align: center;
+                ul{
+                    list-style: none;
+                    li{
+                        margin-top: 5px;
+                        a{
+                            text-decoration: none;
+                            transition: color .2s ease-in;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
