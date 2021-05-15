@@ -1,4 +1,6 @@
 const formPage = document.querySelector(".form-page");
+
+if (formPage)
 document.querySelector(".form-page").onload = function () {
 
 let modal = document.getElementById("modal_window");
