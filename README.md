@@ -10,7 +10,7 @@
 
 Do tasks from [figma maket](https://www.figma.com/file/57skPiq3kmhLLe9yQILWab/Junior-Frontend-developer?node-id=8%3A243 "figma maket")
 
-[Demo](https://golveronika.github.io/junior_fe_developer_1/index.html "Demo")
+[Demo](https://katenevzgodova.github.io/)
 
 ## Tasks:
 
